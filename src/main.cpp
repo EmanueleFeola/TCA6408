@@ -9,7 +9,7 @@ void setup()
 {
   Serial.begin(115200);
 
-  TCA_Begin(I2C_SDA, I2C_SCL);
+  TCA_Begin(I2C_SDA, I2C_SCL, 100000, 100);
   TCA_Write_Direction(TCA_IO_ARR); // set input/output pins
   bool pin_state = false;
 

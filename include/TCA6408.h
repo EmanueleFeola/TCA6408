@@ -16,8 +16,6 @@ All registers can be read by the system controller.
 #include <Arduino.h>
 #include <Wire.h>
 
-#define TCA6408_LIB_VERSION "0.0.1"
-
 #define I2C_TCA6408_ADDR 0x21
 
 // TCA registers
@@ -30,7 +28,7 @@ All registers can be read by the system controller.
 // #define TCA_INPUT_PIN 1
 // #define TCA_OUTPUT_PIN 0
 
-void TCA_Begin(uint8_t sda_pin, uint8_t scl_pin);
+void TCA_Begin(uint8_t sda_pin, uint8_t scl_pin, int wire_freq, int wire_timeout_ms);
 uint8_t TCA_Read(uint8_t reg);
 uint8_t TCA_Write(uint8_t reg, uint8_t data);
 

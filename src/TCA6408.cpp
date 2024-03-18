@@ -1,8 +1,9 @@
 #include "TCA6408.h"
 
-void TCA_Begin(uint8_t sda_pin, uint8_t scl_pin)
+void TCA_Begin(uint8_t sda_pin, uint8_t scl_pin, int wire_freq, int wire_timeout_ms)
 {
-    Wire.begin((int)sda_pin, (int)scl_pin, 400000L);
+    Wire.setTimeOut(wire_timeout_ms);
+    Wire.begin((int)sda_pin, (int)scl_pin, wire_freq);
 }
 
 uint8_t TCA_Read(uint8_t reg)
