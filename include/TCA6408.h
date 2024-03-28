@@ -28,7 +28,7 @@ All registers can be read by the system controller.
 // #define TCA_INPUT_PIN 1
 // #define TCA_OUTPUT_PIN 0
 
-void TCA_Begin(uint8_t sda_pin, uint8_t scl_pin, int wire_freq, int wire_timeout_ms);
+void TCA_Begin(int8_t sda_pin, int8_t scl_pin, uint32_t wire_freq, uint16_t wire_timeout_ms);
 uint8_t TCA_Read(uint8_t reg);
 uint8_t TCA_Write(uint8_t reg, uint8_t data);
 

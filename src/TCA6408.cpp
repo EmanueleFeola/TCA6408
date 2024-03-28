@@ -1,9 +1,9 @@
 #include "TCA6408.h"
 
-void TCA_Begin(uint8_t sda_pin, uint8_t scl_pin, int wire_freq, int wire_timeout_ms)
+void TCA_Begin(int8_t sda_pin, int8_t scl_pin, uint32_t wire_freq, uint16_t wire_timeout_ms)
 {
     Wire.setTimeOut(wire_timeout_ms);
-    Wire.begin((int)sda_pin, (int)scl_pin, wire_freq);
+    Wire.begin(sda_pin, scl_pin, wire_freq);
 }
 
 uint8_t TCA_Read(uint8_t reg)
@@ -13,7 +13,7 @@ uint8_t TCA_Read(uint8_t reg)
     Wire.write(reg);
     Wire.endTransmission();
 
-    Wire.requestFrom(I2C_TCA6408_ADDR, (uint8_t)1);
+    Wire.requestFrom(I2C_TCA6408_ADDR, 1);
     return Wire.read();
 }
 
