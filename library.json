@@ -1,6 +1,6 @@
 {
     "name": "TCA6408",
-    "version": "0.0.4",
+    "version": "0.0.6",
     "description": "esp32 library for TCA6408 tested with TCA6408ARGTR",
     "keywords": "esp32, TCA6408, arduino",
     "repository":
